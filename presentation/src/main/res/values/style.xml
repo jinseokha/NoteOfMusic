@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="list_title_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/list_title</item>
+        <item name="android:textColor">@color/black_high_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="list_artist_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/list_artist</item>
+        <item name="android:textColor">@color/black_medium_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="list_summary_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/list_summary</item>
+        <item name="android:textColor">@color/black_high_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="list_time_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/list_time</item>
+        <item name="android:textColor">@color/black_medium_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="list_rating_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/list_rating</item>
+        <item name="android:textColor">@color/black_medium_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="search_title_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/search_title</item>
+        <item name="android:textColor">@color/black_high_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="search_artist_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/search_artist</item>
+        <item name="android:textColor">@color/black_medium_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="dialog_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/dialog_title</item>
+        <item name="android:textColor">@color/black_high_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="btn_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/default_btn_text_size</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/noto_sans_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="btn_dialog_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/default_btn_text_size</item>
+        <item name="android:textColor">@color/black_high_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="toolbar_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/toolbar_title</item>
+        <item name="android:textColor">@color/black_high_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="detail_header_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/detail_header</item>
+        <item name="android:textColor">@color/black_high_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="detail_body_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/detail_body</item>
+        <item name="android:textColor">@color/black_high_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="bottom_sheet_black_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/bottom_sheet_text</item>
+        <item name="android:textColor">@color/black_high_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="bottom_sheet_red_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/bottom_sheet_text</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="music_empty_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/middle_text_size</item>
+        <item name="android:textColor">@color/black_high_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="default_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/default_text_size</item>
+        <item name="android:textColor">@color/black_high_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="setting_header_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/setting_header_size</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="setting_body_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/setting_text_size</item>
+        <item name="android:textColor">@color/black_high_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="filter_header_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/music_header</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/noto_sans_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="lock_number_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/lock_number_text</item>
+        <item name="android:textColor">@color/light_gray</item>
+        <item name="android:fontFamily">@font/noto_sans_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="lock_number_select_text">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/ripple_lock</item>
+        <item name="android:textSize">@dimen/lock_number_text</item>
+        <item name="android:textColor">@color/black_high_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="lock_header_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/lock_header</item>
+        <item name="android:textColor">@color/black_high_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="lock_body_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/lock_body</item>
+        <item name="android:textColor">@color/black_high_emphasis</item>
+        <item name="android:fontFamily">@font/noto_sans_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/dialog_bottom_sheet</item>
+    </style>
+</resources>

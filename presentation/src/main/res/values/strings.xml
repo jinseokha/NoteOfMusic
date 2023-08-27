@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="EXtraTranslation">
+
+    <string name="cancel">취소</string>
+    <string name="ok">확인</string>
+    <string name="save">저장</string>
+
+    <string name="rating_text">평점선택</string>
+
+    <string name="menu_music">음악</string>
+    <string name="menu_album">앨범</string>
+    <string name="menu_other">칼럼</string>
+    <string name="menu_setting">설정</string>
+
+    <string name="music_title">제목</string>
+    <string name="music_artist">가수</string>
+    <string name="music_summary">한줄평</string>
+    <string name="music_content">내용</string>
+    <string name="album_track_list">트랙 리스트</string>
+
+    <string name="search_view_hint">음악 검색</string>
+    <string name="search_view_album_hint">앨범 검색</string>
+    <string name="music_insert_text">음악 등록</string>
+    <string name="music_detail_text">음악 상세</string>
+    <string name="music_modify_text">음악 수정</string>
+    <string name="music_list_text">음악 목록</string>
+    <string name="album_list_text">앨범 목록</string>
+    <string name="album_insert_text">앨범 등록</string>
+    <string name="album_modify_text">앨범 수정</string>
+    <string name="album_detail_text">앨범 상세</string>
+    <string name="other_text">칼럼</string>
+    <string name="setting_text">설정</string>
+
+    <string name="sort_text">정렬</string>
+    <string name="sort_header">기록 정렬</string>
+    <string name="sort_time_desc">최신 순</string>
+    <string name="sort_time_asc">과거 순</string>
+    <string name="sort_title_asc">제목 순</string>
+    <string name="sort_title_desc">제목 역순</string>
+    <string name="sort_rating_desc">평점 순</string>
+    <string name="sort_rating_asc">평점 역순</string>
+
+    <string name="insert_success">기록이 등록되었습니다.</string>
+    <string name="insert_error">테스트</string>
+    <string name="error_title">제목을 입력해주세요.</string>
+    <string name="error_artist">가수를 입력해주세요.</string>
+    <string name="error_summary">한줄평을 입력해주세요.</string>
+    <string name="error_content">내용을 입력해주세요.</string>
+    <string name="error_genre">장르를 선택해주세요.</string>
+    <string name="update_success">기록이 수정되었습니다.</string>
+
+    <string name="error_network">인터넷 연결 상태를 확인해주세요.</string>
+    <string name="error_unknown">검색 결과가 없습니다.</string>
+    <string name="binding_summary">\"%s\"</string>
+    <string name="search_direct_text">원하시는 결과가 없나요?</string>
+    <string name="insert_direct"><u>직접 등록하기</u></string>
+
+    <string name="back_btn_press">뒤로가기 버튼을 한번 더 누르면 종료됩니다.</string>
+
+    <string name="menu_play">재생</string>
+    <string name="menu_modify">기록 수정</string>
+    <string name="menu_delete">기록 삭제</string>
+    <string name="delete_content">기록을 삭제하시겠습니까? 삭제한 내용은 복구할 수 없습니다.</string>
+    <string name="delete_success">기록이 삭제되었습니다.</string>
+
+    <string name="category_header">평점/장르별 보기</string>
+    <string name="filter_reset">필터가 초기화되었습니다.</string>
+
+    <string name="bottom_sheet_start">재생하기</string>
+    <string name="bottom_sheet_modify">기록 수정하기</string>
+    <string name="bottom_sheet_delete">기록 삭제하기</string>
+    <string name="bottom_sheet_cancel">닫기</string>
+
+    <string name="music_empty">등록된 음악이 없습니다.\n지금 음악을 등록해보세요!</string>
+    <string name="album_empty">등록된 앨범이 없습니다.\n지금 앨범을 등록해보세요!</string>
+
+    <string name="recommendation_header">추천 음악</string>
+    <string name="recommendation_body">개발자의 추천 음악을 만나보세요!</string>
+    <string name="essay_header">음악 에세이</string>
+
+
+    <string name="data_header">데이터</string>
+    <string name="data_setting">데이터 백업/복원하기</string>
+    <string name="data_back_up">데이터 백업하기</string>
+    <string name="data_restore">데이터 복원하기</string>
+    <string name="data_restore_detail">백업파일을 선택해주세요.\n(크기가 0KB 이거나 백업 기능으로 백업하지 않은 파일 선택 X)</string>
+    <string name="back_up_header">데이터를 로컬 저장소에 \n백업/복원 할 수 있습니다.</string>
+    <string name="data_music_delete">음악 전부 삭제하기</string>
+    <string name="data_album_delete">앨범 전부 삭제하기</string>
+    <string name="music_count_header">등록한 음악</string>
+    <string name="music_album_header">등록한 앨범</string>
+    <string name="security_header">보안</string>
+    <string name="lock_setting">잠금 설정</string>
+    <string name="password_use">비밀번호 사용</string>
+    <string name="fingerprint_use">지문 사용</string>
+    <string name="password_change">비밀번호 변경</string>
+    <string name="etc_header">기타</string>
+    <string name="review">리뷰하기</string>
+    <string name="inquiry">문의하기</string>
+    <string name="inquiry_name">닉네임</string>
+    <string name="inquiry_success">문의가 등록되었습니다.</string>
+    <string name="inquiry_header">이용하면서 불편했던 부분이나 건의사항을 남겨주세요. \n답장이 필요할 시 이메일을 남겨주세요!</string>
+    <string name="layout_header">레이아웃</string>
+    <string name="layout_type">데이터 간략히 표시</string>
+    <string name="source_text">음악 정보 제공 : maniadb</string>
+
+    <string name="unlock">잠금 해제</string>
+    <string name="unlock_detail">지문 또는 비밀번호를 입력하세요.</string>
+    <string name="unlock_fail">비밀번호가 일치하지 않습니다.</string>
+
+    <string name="password_setting">비밀번호</string>
+    <string name="password_setting_body">새 비밀번호를 입력해주세요.</string>
+    <string name="password_setting_body_second">다시 한번 입력해주세요.</string>
+    <string name="password_setting_success">비밀번호가 설정되었습니다.</string>
+    <string name="password_setting_fail">"비밀번호가 일치하지 않습니다. 다시 입력해주세요."</string>
+
+    <string-array name="genre">
+        <item>장르</item>
+        <item>발라드</item>
+        <item>댄스</item>
+        <item>POP</item>
+        <item>힙합</item>
+        <item>R&amp;B</item>
+        <item>인디</item>
+        <item>락</item>
+        <item>재즈</item>
+        <item>기타</item>
+    </string-array>
+
+    <string-array name="genre_filter">
+        <item>전체</item>
+        <item>발라드</item>
+        <item>댄스</item>
+        <item>POP</item>
+        <item>힙합</item>
+        <item>R&amp;B</item>
+        <item>인디</item>
+        <item>락</item>
+        <item>재즈</item>
+        <item>기타</item>
+    </string-array>
+
+    <string-array name="sort">
+        <item>최신 순</item>
+        <item>과거 순</item>
+        <item>제목 순</item>
+        <item>제목 역순</item>
+        <item>평점 순</item>
+        <item>평점 역순</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
