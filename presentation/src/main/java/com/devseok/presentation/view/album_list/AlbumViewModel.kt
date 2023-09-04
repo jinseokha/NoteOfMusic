@@ -15,6 +15,7 @@ import com.devseok.domain.usecase.album.InsertAlbumUseCase
 import com.devseok.domain.usecase.album.UpdateAlbumUseCase
 import com.devseok.domain.utils.Result
 import com.devseok.presentation.R
+import com.devseok.presentation.utils.TIME_DESC
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -23,6 +24,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -144,8 +146,97 @@ class AlbumViewModel @Inject constructor(
         initialValue = Result.Uninitialized
     )
 
-    fun changeAlbumList(start: Float, end: Float, genre: String) {
-
+    fun resetAlbumList() {
+        albumList = getAllAlbumUseCase.execute().stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(5000),
+            initialValue = Result.Uninitialized
+        )
+        setFilterAll("전체", 0.0f, 5.0f, TIME_DESC)
     }
+
+    fun changeAlbumList(start: Float, end: Float, genre: String) {
+        if (genre == "전체") {
+            albumList =
+                getAllAlbumByRatingUseCase.execute(start, end).stateIn(
+                    scope = viewModelScope,
+                    started = SharingStarted.WhileSubscribed(5000),
+                    initialValue = Result.Uninitialized
+                )
+        } else {
+            albumList =
+                getAllAlbumByCategoryUseCase.execute(start, end, genre).stateIn(
+                    scope = viewModelScope,
+                    started = SharingStarted.WhileSubscribed(5000),
+                    initialValue = Result.Uninitialized
+                )
+        }
+        setFilterAll(genre, start, end, filterSort.value)
+    }
+
+    var trackBoolean: MutableStateFlow<Boolean> = MutableStateFlow(false)
+
+    fun hideTrackList() {
+        trackBoolean.value = !trackBoolean.value
+    }
+
+    fun getRemoteAlbums(keyword: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            getRemoteAlbumsUseCase.execute(keyword).collectLatest {
+                _remoteAlbums.value = it
+            }
+        }
+    }
+
+    fun deleteAlbum(id: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            deleteAlbumUseCase.execute(id)
+        }
+    }
+
+    fun deleteAllAlbum() {
+        viewModelScope.launch(Dispatchers.IO) {
+            deleteAllAlbumUseCase.execute()
+        }
+    }
+
+    fun inputCheck() {
+        viewModelScope.launch(Dispatchers.IO) {
+            when {
+                title.value.isBlank() -> {
+                    _inputErrorMsg.emit(R.string.error_title)
+                }
+                artist.value.isBlank() -> {
+                    _inputErrorMsg.emit(R.string.error_artist)
+                }
+                summary.value.isBlank() ->{
+                    _inputErrorMsg.emit(R.string.error_summary)
+                }
+                content.value.isBlank() ->{
+                    _inputErrorMsg.emit(R.string.error_content)
+                }
+                genre.value == "장르" ->{
+                    _inputErrorMsg.emit(R.string.error_genre)
+                }else -> {
+                _inputSuccessEvent.emit("검사 성공")
+            }
+            }
+        }
+    }
+
+    fun updateAlbum(rating: Float) {
+        viewModelScope.launch(Dispatchers.IO) {
+            updateAlbumUseCase.execute(id.value, title.value, artist.value, genre.value,
+                rating, summary.value, content.value)
+            _insertSuccessMsg.emit(R.string.update_success)
+        }
+    }
+
+    var albumCount: StateFlow<Result<Int>> =
+        getAllAlbumCountUseCase.execute().stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(5000),
+            initialValue = Result.Uninitialized
+        )
 
 }

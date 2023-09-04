@@ -105,7 +105,15 @@ class AlbumListFragment : BaseFragmentMain<FragmentAlbumListBinding>(R.layout.fr
 
     private fun collectMusicList() {
         job = lifecycleScope.launchWhenStarted {
-
+            albumViewModel.albumList.collect {
+                if (it is Result.Success) {
+                    searchView.setQuery("", false)
+                    albumListAdapter.setItem(it.data)
+                    albumListAdapter.order(albumViewModel.filterSort.value)
+                } else {
+                    albumListAdapter.setItem(mutableListOf())
+                }
+            }
         }
     }
 
@@ -114,15 +122,17 @@ class AlbumListFragment : BaseFragmentMain<FragmentAlbumListBinding>(R.layout.fr
     }
 
     override fun onOtherButtonClicked(album: Album) {
-
+        val dialog = AlbumBottomSheet(album)
+        dialog.show(childFragmentManager, dialog.tag)
     }
 
     override fun onSortClicked(type: Int) {
-
+        albumListAdapter.order(type)
+        albumViewModel.setFilterSort(type)
     }
 
     override fun onCategorySelected(start: Float, end: Float, genre: String) {
-
+        jobUpdate { albumViewModel.changeAlbumList(start, end, genre) }
     }
 
     override fun onResume() {
