@@ -1,4 +1,4 @@
-package com.devseok.presentation.view.album_list.list
+package com.devseok.presentation.view.music_list.list
 
 import android.app.Dialog
 import android.content.Intent
@@ -11,22 +11,28 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.devseok.domain.model.album.Album
+import com.devseok.domain.model.music.Music
 import com.devseok.presentation.R
 import com.devseok.presentation.databinding.DialogBottomSheetBinding
 import com.devseok.presentation.utils.showDeleteDialog
-import com.devseok.presentation.view.album_list.AlbumViewModel
+import com.devseok.presentation.view.music_list.MusicViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 
+/**
+ * @author Ha Jin Seok
+ * @created 2023-09-05
+ * @desc
+ */
 @AndroidEntryPoint
-class AlbumBottomSheet (private val album: Album): BottomSheetDialogFragment() {
+class MusicBottomSheet(private val music: Music): BottomSheetDialogFragment() {
 
     private var _binding: DialogBottomSheetBinding? = null
-    val binding get() = _binding!!
+    val binding
+        get() = _binding!!
 
-    private val albumViewModel by activityViewModels<AlbumViewModel>()
+    private val musicViewModel by activityViewModels<MusicViewModel>()
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return BottomSheetDialog(requireContext(), R.style.AppBottomSheetDialogTheme)
@@ -38,7 +44,7 @@ class AlbumBottomSheet (private val album: Album): BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = DataBindingUtil.inflate(inflater, R.layout.dialog_bottom_sheet, container, false)
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -54,29 +60,26 @@ class AlbumBottomSheet (private val album: Album): BottomSheetDialogFragment() {
     private fun initClickListener() {
         binding.apply {
             textStart.setOnClickListener {
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=${album.artist} ${album.title}"))
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=${music.artist} ${music.title}"))
                 requireContext().startActivity(intent)
                 dismiss()
             }
-
             textDelete.setOnClickListener {
-                showDeleteDialog(requireContext()) { dialogPositiveButtonClicked() }
+                showDeleteDialog(requireContext()){ dialogPositiveButtonClicked() }
             }
-
             textModify.setOnClickListener {
-                albumViewModel.setAlbum(album)
-                findNavController().navigate(R.id.action_mainFragment_to_albumModifyFragment)
+                musicViewModel.setMusic(music)
+                findNavController().navigate(R.id.action_mainFragment_to_musicModifyFragment)
                 dismiss()
             }
-
             textCancel.setOnClickListener {
                 dismiss()
             }
         }
     }
 
-    private fun dialogPositiveButtonClicked() {
-        albumViewModel.deleteAlbum(album.id)
+    private fun dialogPositiveButtonClicked(){
+        musicViewModel.deleteMusic(music.id)
         Toast.makeText(requireContext(), (resources.getString(R.string.delete_success)), Toast.LENGTH_SHORT).show()
         dismiss()
     }
@@ -85,4 +88,5 @@ class AlbumBottomSheet (private val album: Album): BottomSheetDialogFragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/popup_bg"
+        android:padding="@dimen/padding_default_10">
+
+        <TextView
+            android:id="@+id/label_star"
+            android:text="@string/rating_text"
+            style="@style/dialog_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.willy.ratingbar.ScaleRatingBar
+            android:id="@+id/ratingBar_popup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srb_clickable="true"
+            app:srb_isIndicator="false"
+            app:srb_starPadding="@dimen/star_padding"
+            app:srb_numStars="5"
+            app:srb_rating="0"
+            app:srb_scrollable="true"
+            app:srb_stepSize="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_star" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:background="@android:color/transparent"
+            android:text="@string/cancel"
+            style="@style/btn_dialog_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ratingBar_popup" />
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:background="@android:color/transparent"
+            android:text="@string/ok"
+            style="@style/btn_dialog_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ratingBar_popup" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -11,5 +11,132 @@
         android:label="MainFragment"
         tools:layout="@layout/fragment_main">
 
+        <action
+            android:id="@+id/action_mainFragment_to_musicSearchFragment"
+            app:destination="@id/musicSearchFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+
+        <action
+            android:id="@+id/action_mainFragment_to_musicDetailFragment"
+            app:destination="@id/musicDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+
+        <action
+            android:id="@+id/action_mainFragment_to_musicModifyFragment"
+            app:destination="@id/musicModifyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+
+        <action
+            android:id="@+id/action_mainFragment_to_albumSearchFragment"
+            app:destination="@id/albumSearchFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+
+        <action
+            android:id="@+id/action_mainFragment_to_albumDetailFragment"
+            app:destination="@id/albumDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+
+        <action
+            android:id="@+id/action_mainFragment_to_albumModifyFragment"
+            app:destination="@id/albumModifyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
+
+    <fragment
+        android:id="@+id/musicSearchFragment"
+        android:name="com.devseok.presentation.view.music_list.search.MusicSearchFragment"
+        android:label="MusicSearchFragment"
+        tools:layout="@layout/fragment_music_search">
+
+        <action
+            android:id="@+id/action_musicSearchFragment_to_musicInsertFragment"
+            app:destination="@id/musicInsertFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/musicInsertFragment"
+        android:name="com.devseok.presentation.view.music_list.insert.MusicInsertFragment"
+        android:label="fragment_music_insert"
+        tools:layout="@layout/fragment_music_insert"/>
+
+    <fragment
+        android:id="@+id/musicDetailFragment"
+        android:name="com.devseok.presentation.view.music_list.detail.MusicDetailFragment"
+        android:label="MusicDetailFragment"
+        tools:layout="@layout/fragment_music_detail">
+        <argument
+            android:name="music"
+            app:argType="com.devseok.domain.model.music.Music"/>
+        <action
+            android:id="@+id/action_musicDetailFragment_to_musicModifyFragment"
+            app:destination="@id/musicModifyFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/musicModifyFragment"
+        android:name="com.devseok.presentation.view.music_list.modify.MusicModifyFragment"
+        android:label="MusicModifyFragment"
+        tools:layout="@layout/fragment_music_modify"/>
+
+    <fragment
+        android:id="@+id/albumSearchFragment"
+        android:name="com.devseok.presentation.view.album_list.search.AlbumSearchFragment"
+        android:label="AlbumSearchFragment"
+        tools:layout="@layout/fragment_album_search">
+        <action
+            android:id="@+id/action_albumSearchFragment_to_albumInsertFragment"
+            app:destination="@id/albumInsertFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/albumInsertFragment"
+        android:name="com.devseok.presentation.view.album_list.insert.AlbumInsertFragment"
+        android:label="AlbumInsertFragment"
+        tools:layout="@layout/fragment_album_insert"/>
+
+    <fragment
+        android:id="@+id/albumDetailFragment"
+        android:name="com.devseok.presentation.view.album_list.detail.AlbumDetailFragment"
+        android:label="AlbumDetailFragment"
+        tools:layout="@layout/fragment_album_detail">
+        <argument
+            android:name="album"
+            app:argType="com.devseok.domain.model.album.Album"/>
+        <action
+            android:id="@+id/action_albumDetailFragment_to_albumModifyFragment"
+            app:destination="@id/albumModifyFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/albumModifyFragment"
+        android:name="com.devseok.presentation.view.album_list.modify.AlbumModifyFragment"
+        android:label="AlbumModifyFragment"
+        tools:layout="@layout/fragment_album_modify"/>
+
 </navigation>

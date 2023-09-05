@@ -1,4 +1,4 @@
-package com.devseok.presentation.view.album_list.insert
+package com.devseok.presentation.view.music_list.insert
 
 import android.view.View
 import android.view.WindowManager
@@ -7,22 +7,27 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.devseok.presentation.R
 import com.devseok.presentation.base.BaseFragment
-import com.devseok.presentation.databinding.FragmentAlbumInsertBinding
+import com.devseok.presentation.databinding.FragmentMusicInsertBinding
 import com.devseok.presentation.utils.repeatOnStarted
-import com.devseok.presentation.view.album_list.AlbumViewModel
+import com.devseok.presentation.view.music_list.MusicViewModel
 import com.devseok.presentation.view.rating.RatingDialog
 import com.devseok.presentation.view.rating.RatingListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
+/**
+ * @author Ha Jin Seok
+ * @created 2023-09-05
+ * @desc
+ */
 @AndroidEntryPoint
-class AlbumInsertFragment : BaseFragment<FragmentAlbumInsertBinding>(R.layout.fragment_album_insert), RatingListener {
+class MusicInsertFragment : BaseFragment<FragmentMusicInsertBinding>(R.layout.fragment_music_insert), RatingListener {
 
-    private val albumViewModel by activityViewModels<AlbumViewModel>()
+    private val musicViewModel by activityViewModels<MusicViewModel>()
 
     override fun init() {
         binding.apply {
-            vm = albumViewModel
+            vm = musicViewModel
         }
 
         initViewModelCallback()
@@ -32,13 +37,13 @@ class AlbumInsertFragment : BaseFragment<FragmentAlbumInsertBinding>(R.layout.fr
 
     private fun initViewModelCallback() {
         repeatOnStarted {
-            albumViewModel.inputErrorMsg.collectLatest {
+            musicViewModel.inputErrorMsg.collectLatest {
                 showToast(resources.getString(it))
             }
         }
 
         repeatOnStarted {
-            albumViewModel.insertSuccessMsg.collectLatest {
+            musicViewModel.insertSuccessMsg.collectLatest {
                 showToast(resources.getString(it))
                 findNavController().navigateUp()
                 findNavController().navigateUp()
@@ -46,8 +51,8 @@ class AlbumInsertFragment : BaseFragment<FragmentAlbumInsertBinding>(R.layout.fr
         }
 
         repeatOnStarted {
-            albumViewModel.inputSuccessEvent.collectLatest {
-                RatingDialog(requireContext(), this@AlbumInsertFragment).show()
+            musicViewModel.inputSuccessEvent.collectLatest {
+                RatingDialog(requireContext(), this@MusicInsertFragment).show()
             }
         }
     }
@@ -69,7 +74,7 @@ class AlbumInsertFragment : BaseFragment<FragmentAlbumInsertBinding>(R.layout.fr
         binding.spinnerGenre.apply {
             onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
-                    albumViewModel.setGenre(spinnerEntries[position])
+                    musicViewModel.setGenre(spinnerEntries[position])
                 }
 
                 override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -80,7 +85,7 @@ class AlbumInsertFragment : BaseFragment<FragmentAlbumInsertBinding>(R.layout.fr
     }
 
     override fun onOkClick(rating: Float) {
-        albumViewModel.insertAlbum(rating)
+        musicViewModel.insertMusic(rating)
     }
 
     override fun onResume() {

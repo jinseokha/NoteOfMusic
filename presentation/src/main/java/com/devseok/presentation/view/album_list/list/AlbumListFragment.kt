@@ -17,6 +17,9 @@ import com.devseok.presentation.view.album_list.AlbumViewModel
 import com.devseok.presentation.view.category.CategoryDialogListener
 import com.devseok.presentation.view.sort.SortListener
 import com.devseok.domain.utils.Result
+import com.devseok.presentation.view.MainFragmentDirections
+import com.devseok.presentation.view.category.CategoryDialog
+import com.devseok.presentation.view.sort.SortDialog
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
@@ -76,7 +79,25 @@ class AlbumListFragment : BaseFragmentMain<FragmentAlbumListBinding>(R.layout.fr
 
     private fun initClickListener() {
         binding.apply {
+            toolbar.setOnMenuItemClickListener {
+                if (it.itemId == R.id.menu_add) {
+                    findNavController().navigate(R.id.action_mainFragment_to_albumSearchFragment)
+                }
+                false
+            }
 
+            imageReset.setOnClickListener {
+                jobUpdate { albumViewModel.resetAlbumList() }
+                showToast(resources.getString(R.string.filter_reset))
+            }
+
+            textFilterCategory.setOnClickListener {
+                CategoryDialog(requireContext(), this@AlbumListFragment).show()
+            }
+
+            textFilterSort.setOnClickListener {
+                SortDialog(requireContext(), this@AlbumListFragment).show()
+            }
         }
     }
 
@@ -118,7 +139,7 @@ class AlbumListFragment : BaseFragmentMain<FragmentAlbumListBinding>(R.layout.fr
     }
 
     override fun onItemClicked(album: Album) {
-
+        findNavController().navigate(MainFragmentDirections.actionMainFragmentToAlbumDetailFragment(album))
     }
 
     override fun onOtherButtonClicked(album: Album) {
