@@ -2,20 +2,30 @@ package com.devseok.presentation.view.music_list.list
 
 import android.content.SharedPreferences
 import android.os.Build
+import android.view.WindowManager
 import android.widget.SearchView
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.devseok.domain.model.music.Music
+import com.devseok.domain.utils.Result
 import com.devseok.presentation.R
 import com.devseok.presentation.base.BaseFragmentMain
 import com.devseok.presentation.databinding.FragmentMusicListBinding
+import com.devseok.presentation.utils.LIST_TYPE
+import com.devseok.presentation.view.MainFragmentDirections
 import com.devseok.presentation.view.MainViewModel
+import com.devseok.presentation.view.category.CategoryDialog
 import com.devseok.presentation.view.category.CategoryDialogListener
 import com.devseok.presentation.view.music_list.MusicViewModel
+import com.devseok.presentation.view.sort.SortDialog
 import com.devseok.presentation.view.sort.SortListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
 import javax.inject.Inject
 
 /**
@@ -51,20 +61,27 @@ class MusicListFragment : BaseFragmentMain<FragmentMusicListBinding>(R.layout.fr
         initViewModelCallback()
     }
 
-    override fun onCategorySelected(start: Float, end: Float, genre: String) {
+    override fun onResume() {
+        super.onResume()
+        requireActivity().window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING)
+    }
 
+    override fun onCategorySelected(start: Float, end: Float, genre: String) {
+        jobUpdate { musicViewModel.changeMusicList(start, end, genre) }
     }
 
     override fun onItemClicked(music: Music) {
-
+        findNavController().navigate(MainFragmentDirections.actionMainFragmentToMusicDetailFragment(music))
     }
 
     override fun onOtherButtonClicked(music: Music) {
-
+        val dialog = MusicBottomSheet(music)
+        dialog.show(childFragmentManager, dialog.tag)
     }
 
     override fun onSortClicked(type: Int) {
-
+        musicListAdapter.order(type)
+        musicViewModel.setFilterSort(type)
     }
 
     private fun initSearchView() {
@@ -85,15 +102,68 @@ class MusicListFragment : BaseFragmentMain<FragmentMusicListBinding>(R.layout.fr
     }
 
     private fun initAdapter() {
-
+        musicListAdapter.setListViewType(sharedPref.getInt(LIST_TYPE, 0))
+        binding.apply {
+            recyclerViewMusicList.adapter = musicListAdapter
+        }
     }
 
     private fun initClickListener() {
+        binding.apply {
+            toolbar.setOnMenuItemClickListener {
+                if (it.itemId == R.id.menu_add) {
+                    findNavController().navigate(R.id.action_mainFragment_to_musicSearchFragment)
+                }
+                false
+            }
 
+            imageReset.setOnClickListener {
+                jobUpdate { musicViewModel.resetMusicList() }
+                showToast(resources.getString(R.string.filter_reset))
+            }
+
+            textFilterCategory.setOnClickListener {
+                CategoryDialog(requireContext(), this@MusicListFragment).show()
+            }
+
+            textFilterSort.setOnClickListener {
+                SortDialog(requireContext(), this@MusicListFragment).show()
+            }
+
+        }
     }
 
     private fun initViewModelCallback() {
+        collectMusicList()
+
+        lifecycleScope.launchWhenStarted {
+            mainViewModel.listViewType.collectLatest {
+                initAdapter()
+            }
+        }
+    }
+
+    private fun jobUpdate(logic: () -> Unit) {
+        job.cancel()
+        logic()
+        collectMusicList()
+    }
+
+    private fun collectMusicList() {
+        job = lifecycleScope.launchWhenStarted {
+            musicViewModel.musicList.collect {
+                if (it is Result.Success) {
+                    searchView.setQuery("", false)
+                    musicListAdapter.setItem(it.data)
+                    musicListAdapter.order(musicViewModel.filterSort.value)
+                } else {
+                    musicListAdapter.setItem(mutableListOf())
+                }
+            }
+        }
 
     }
+
+
 
 }
