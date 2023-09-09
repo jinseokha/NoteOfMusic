@@ -10,7 +10,7 @@
         app:actionViewClass="androidx.appcompat.widget.SearchView"/>
 
     <item android:id="@+id/menu_add"
-        android:icon="@drawable/right_image_add"
+        android:icon="@drawable/baseline_add_box_24"
         android:title="@string/sort_text"
         android:enabled="true"
         app:showAsAction="ifRoom"/>

@@ -2,7 +2,6 @@ package com.devseok.presentation.view.music_list
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.devseok.domain.utils.Result
 import com.devseok.domain.model.music.DomainMusicResponse
 import com.devseok.domain.model.music.Music
 import com.devseok.domain.usecase.music.DeleteAllMusicUseCase
@@ -14,6 +13,7 @@ import com.devseok.domain.usecase.music.GetAllMusicUseCase
 import com.devseok.domain.usecase.music.GetRemoteMusicsUseCase
 import com.devseok.domain.usecase.music.InsertMusicUseCase
 import com.devseok.domain.usecase.music.UpdateMusicUseCase
+import com.devseok.domain.utils.Result
 import com.devseok.presentation.R
 import com.devseok.presentation.utils.TIME_DESC
 import dagger.hilt.android.lifecycle.HiltViewModel

@@ -24,4 +24,6 @@
     <color name="other_color">#7CB342</color>
     <color name="album_filter_color">#BF2270DE</color>
     <color name="setting_color">#fa2</color>
+
+    <color name="black_2">#030303</color>
 </resources>

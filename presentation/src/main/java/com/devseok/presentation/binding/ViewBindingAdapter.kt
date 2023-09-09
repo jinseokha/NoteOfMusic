@@ -7,8 +7,8 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
-import com.devseok.presentation.R
 import com.devseok.domain.utils.Result
+import com.devseok.presentation.R
 import com.devseok.presentation.utils.timeFormatter
 
 object ViewBindingAdapter {

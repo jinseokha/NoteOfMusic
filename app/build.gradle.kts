@@ -4,15 +4,15 @@ plugins {
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
     id("kotlin-parcelize")
-    //id("com.google.gms.google-services")
+    id("com.google.gms.google-services")
 }
 
 android {
-    namespace = "com.dahami.noteofmusic"
+    namespace = "com.devseok.noteofmusic"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.dahami.noteofmusic"
+        applicationId = "com.devseok.noteofmusic"
         minSdk = 24
         targetSdk = 33
         versionCode = 1

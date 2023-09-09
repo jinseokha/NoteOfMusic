@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.setting.data.DataSettingFragment">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_default_10"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24">
+
+            <TextView
+                android:id="@+id/text"
+                style="@style/toolbar_text"
+                android:text="@string/data_setting"
+                android:textSize="18sp" />
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_margin="@dimen/margin_24"
+                    android:background="@drawable/setting_top"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_default_10">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/database" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_10"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageView"
+                        app:layout_constraintTop_toTopOf="@+id/imageView">
+
+                        <TextView
+                            android:id="@+id/text_back_up_header"
+                            style="@style/setting_header_text"
+                            android:text="@string/back_up_header"
+                            android:textColor="@color/black_high_emphasis"/>
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/text_data_back_up"
+                    style="@style/setting_body_text"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/ripple_setting"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+                    android:paddingStart="@dimen/padding_20"
+                    android:paddingTop="@dimen/padding_default_10"
+                    android:paddingEnd="@dimen/padding_default_10"
+                    android:paddingBottom="@dimen/padding_default_10"
+                    android:text="@string/data_back_up" />
+
+                <TextView
+                    android:id="@+id/text_data_back_up_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="최근 백업 시간 : "
+                    android:layout_marginTop="@dimen/margin_narrow_8"
+                    style="@style/setting_header_text"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:layout_marginBottom="@dimen/margin_narrow_8"/>
+
+                <TextView
+                    android:id="@+id/text_data_restore"
+                    style="@style/setting_body_text"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/margin_1"
+                    android:background="@drawable/ripple_setting"
+                    android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+                    android:paddingStart="@dimen/padding_20"
+                    android:paddingTop="@dimen/padding_default_10"
+                    android:paddingEnd="@dimen/padding_default_10"
+                    android:paddingBottom="@dimen/padding_default_10"
+                    android:text="@string/data_restore" />
+
+                <TextView
+                    android:id="@+id/text_data_restore_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="최근 복원 시간 : "
+                    android:layout_marginTop="@dimen/margin_narrow_8"
+                    style="@style/setting_header_text"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:layout_marginBottom="@dimen/margin_narrow_8"/>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

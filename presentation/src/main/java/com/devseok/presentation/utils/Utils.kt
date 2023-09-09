@@ -10,9 +10,9 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.devseok.presentation.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import com.devseok.presentation.R
 import java.text.SimpleDateFormat
 import java.util.Date
 

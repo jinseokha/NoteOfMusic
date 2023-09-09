@@ -1,8 +1,8 @@
 package com.devseok.domain.repository
 
-import com.devseok.domain.utils.Result
 import com.devseok.domain.model.music.DomainMusicResponse
 import com.devseok.domain.model.music.Music
+import com.devseok.domain.utils.Result
 import kotlinx.coroutines.flow.Flow
 
 /**

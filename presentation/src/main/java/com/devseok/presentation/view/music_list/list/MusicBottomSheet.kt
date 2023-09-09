@@ -69,7 +69,7 @@ class MusicBottomSheet(private val music: Music): BottomSheetDialogFragment() {
             }
             textModify.setOnClickListener {
                 musicViewModel.setMusic(music)
-                findNavController().navigate(R.id.action_mainFragment_to_musicModifyFragment)
+                findNavController().navigate(R.id.action_musicListFragment_to_musicModifyFragment)
                 dismiss()
             }
             textCancel.setOnClickListener {

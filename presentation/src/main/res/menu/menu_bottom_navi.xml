@@ -4,24 +4,24 @@
     <item android:id="@+id/musicListFragment"
         android:icon="@drawable/left_image_disc"
         android:title="@string/menu_music"
-        app:exb_color="@color/music_color"
+        app:exb_color="@color/white"
         android:enabled="true"/>
 
     <item android:id="@+id/albumListFragment"
         android:icon="@drawable/left_image_album"
         android:title="@string/menu_album"
         android:enabled="true"
-        app:exb_color="@color/album_color"/>
+        app:exb_color="@color/white"/>
 
-    <item android:id="@+id/otherFragment"
+    <!--<item android:id="@+id/otherFragment"
         android:icon="@drawable/left_image_other"
         android:title="@string/menu_other"
         android:enabled="true"
-        app:exb_color="@color/other_color"/>
+        app:exb_color="@color/other_color"/>-->
 
     <item android:id="@+id/settingFragment"
         android:icon="@drawable/left_image_setting"
         android:title="@string/menu_setting"
         android:enabled="true"
-        app:exb_color="@color/setting_color"/>
+        app:exb_color="@color/white"/>
 </menu>

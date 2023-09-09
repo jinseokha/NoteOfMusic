@@ -12,6 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/black_2"
         tools:context=".view.album_list.list.AlbumListFragment"
         android:padding="@dimen/padding_default_10">
 
@@ -19,7 +20,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@color/black_2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -114,6 +115,7 @@
             android:gravity="center"
             android:orientation="vertical"
             android:visibility="gone"
+            android:background="@color/black_2"
             app:isEmpty="@{vm.albumCount}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

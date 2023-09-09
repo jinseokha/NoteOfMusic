@@ -1,4 +1,4 @@
-package com.dahami.buildsrc
+package com.devseok.buildsrc
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.dahami.buildsrc.test", appContext.packageName)
+        assertEquals("com.devseok.buildsrc.test", appContext.packageName)
     }
 }

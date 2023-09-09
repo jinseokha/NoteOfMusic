@@ -65,7 +65,7 @@ class AlbumBottomSheet (private val album: Album): BottomSheetDialogFragment() {
 
             textModify.setOnClickListener {
                 albumViewModel.setAlbum(album)
-                findNavController().navigate(R.id.action_mainFragment_to_albumModifyFragment)
+                findNavController().navigate(R.id.action_albumListFragment_to_albumModifyFragment)
                 dismiss()
             }
 

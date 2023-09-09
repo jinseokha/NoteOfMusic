@@ -5,7 +5,6 @@ plugins {
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
     id("kotlin-parcelize")
-    //id("com.google.gms.google-services")
 }
 
 android {
@@ -62,10 +61,6 @@ dependencies {
     implementation (NavComponent.NAVIGATION_DYNAMIC_FEATURES_FRAGMENT)
     androidTestImplementation (NavComponent.NAVIGATION_TESTING)
 
-    implementation (NavComponent.NAVIGATION_FRAGMENT)
-    implementation (NavComponent.NAVIGATION_UI)
-    implementation (NavComponent.NAVIGATION_DYNAMIC_FEATURES_FRAGMENT)
-    androidTestImplementation (NavComponent.NAVIGATION_TESTING)
 
     // Dagger Hilt
     implementation (DaggerHilt.DAGGER_HILT)

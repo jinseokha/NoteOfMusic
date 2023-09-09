@@ -1,16 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_detail"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/musicListFragment"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <fragment
+        android:id="@+id/musicListFragment"
+        android:name="com.devseok.presentation.view.music_list.list.MusicListFragment"
+        android:label="MusicListFragment"
+        tools:layout="@layout/fragment_music_list">
+
+        <action
+            android:id="@+id/action_musicListFragment_to_musicSearchFragment"
+            app:destination="@id/musicSearchFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_musicListFragment_to_musicDetailFragment"
+            app:destination="@id/musicDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_musicListFragment_to_musicModifyFragment"
+            app:destination="@id/musicModifyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/albumListFragment"
+        android:name="com.devseok.presentation.view.album_list.list.AlbumListFragment"
+        android:label="albumListFragment"
+        tools:layout="@layout/fragment_album_list">
+
+        <action
+            android:id="@+id/action_albumListFragment_to_albumSearchFragment"
+            app:destination="@id/albumSearchFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_albumListFragment_to_albumDetailFragment"
+            app:destination="@id/albumDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_albumListFragment_to_albumModifyFragment"
+            app:destination="@id/albumModifyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+
+    </fragment>
+
+    <!--<fragment
+        android:id="@+id/otherFragment"
+        android:name="com.devseok.presentation.view.other.OtherFragment"
+        android:label="SettingFragment"
+        tools:layout="@layout/fragment_other">
+
+    </fragment>-->
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.devseok.presentation.view.setting.SettingFragment"
+        android:label="SettingFragment"
+        tools:layout="@layout/fragment_setting">
+
+        <action
+            android:id="@+id/action_settingFragment_to_dataSettingFragment"
+            app:destination="@id/dataSettingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_settingFragment_to_inquiryFragment"
+            app:destination="@id/inquiryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_settingFragment_to_lockSettingFragment"
+            app:destination="@id/lockSettingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+
+    </fragment>
+
+    <!--<fragment
         android:id="@+id/mainFragment"
         android:name="com.devseok.presentation.view.MainFragment"
         android:label="MainFragment"
         tools:layout="@layout/fragment_main">
-
         <action
             android:id="@+id/action_mainFragment_to_musicSearchFragment"
             app:destination="@id/musicSearchFragment"
@@ -18,7 +115,6 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
-
         <action
             android:id="@+id/action_mainFragment_to_musicDetailFragment"
             app:destination="@id/musicDetailFragment"
@@ -26,7 +122,6 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
-
         <action
             android:id="@+id/action_mainFragment_to_musicModifyFragment"
             app:destination="@id/musicModifyFragment"
@@ -34,7 +129,6 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
-
         <action
             android:id="@+id/action_mainFragment_to_albumSearchFragment"
             app:destination="@id/albumSearchFragment"
@@ -42,7 +136,6 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
-
         <action
             android:id="@+id/action_mainFragment_to_albumDetailFragment"
             app:destination="@id/albumDetailFragment"
@@ -50,7 +143,6 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
-
         <action
             android:id="@+id/action_mainFragment_to_albumModifyFragment"
             app:destination="@id/albumModifyFragment"
@@ -58,7 +150,28 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
-    </fragment>
+        <action
+            android:id="@+id/action_mainFragment_to_dataSettingFragment"
+            app:destination="@id/dataSettingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_mainFragment_to_inquiryFragment"
+            app:destination="@id/inquiryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_mainFragment_to_lockSettingFragment"
+            app:destination="@id/lockSettingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>-->
 
     <fragment
         android:id="@+id/musicSearchFragment"
@@ -138,5 +251,34 @@
         android:name="com.devseok.presentation.view.album_list.modify.AlbumModifyFragment"
         android:label="AlbumModifyFragment"
         tools:layout="@layout/fragment_album_modify"/>
+
+    <fragment
+        android:id="@+id/dataSettingFragment"
+        android:name="com.devseok.presentation.view.setting.data.DataSettingFragment"
+        android:label="DataSettingFragment"
+        tools:layout="@layout/fragment_data_setting"/>
+    <fragment
+        android:id="@+id/inquiryFragment"
+        android:name="com.devseok.presentation.view.setting.inquiry.InquiryFragment"
+        android:label="InquiryFragment"
+        tools:layout="@layout/fragment_inquiry"/>
+    <fragment
+        android:id="@+id/lockSettingFragment"
+        android:name="com.devseok.presentation.view.setting.lock.LockSettingFragment"
+        android:label="LockSettingFragment"
+        tools:layout="@layout/fragment_lock_setting">
+        <action
+            android:id="@+id/action_lockSettingFragment_to_passwordSettingFragment"
+            app:destination="@id/passwordSettingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/passwordSettingFragment"
+        android:name="com.devseok.presentation.view.setting.lock.password.PasswordSettingFragment"
+        android:label="PasswordSettingFragment"
+        tools:layout="@layout/fragment_password_setting"/>
 
 </navigation>

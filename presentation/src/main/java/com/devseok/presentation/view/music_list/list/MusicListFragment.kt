@@ -3,8 +3,8 @@ package com.devseok.presentation.view.music_list.list
 import android.content.SharedPreferences
 import android.os.Build
 import android.view.WindowManager
-import android.widget.SearchView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -15,7 +15,6 @@ import com.devseok.presentation.R
 import com.devseok.presentation.base.BaseFragmentMain
 import com.devseok.presentation.databinding.FragmentMusicListBinding
 import com.devseok.presentation.utils.LIST_TYPE
-import com.devseok.presentation.view.MainFragmentDirections
 import com.devseok.presentation.view.MainViewModel
 import com.devseok.presentation.view.category.CategoryDialog
 import com.devseok.presentation.view.category.CategoryDialogListener
@@ -24,7 +23,6 @@ import com.devseok.presentation.view.sort.SortDialog
 import com.devseok.presentation.view.sort.SortListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import javax.inject.Inject
 
@@ -71,7 +69,7 @@ class MusicListFragment : BaseFragmentMain<FragmentMusicListBinding>(R.layout.fr
     }
 
     override fun onItemClicked(music: Music) {
-        findNavController().navigate(MainFragmentDirections.actionMainFragmentToMusicDetailFragment(music))
+        findNavController().navigate(MusicListFragmentDirections.actionMusicListFragmentToMusicDetailFragment(music))
     }
 
     override fun onOtherButtonClicked(music: Music) {
@@ -112,7 +110,7 @@ class MusicListFragment : BaseFragmentMain<FragmentMusicListBinding>(R.layout.fr
         binding.apply {
             toolbar.setOnMenuItemClickListener {
                 if (it.itemId == R.id.menu_add) {
-                    findNavController().navigate(R.id.action_mainFragment_to_musicSearchFragment)
+                    findNavController().navigate(R.id.action_musicListFragment_to_musicSearchFragment)
                 }
                 false
             }

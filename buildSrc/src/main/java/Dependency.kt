@@ -8,7 +8,7 @@ import Versions.ROOM_VERSION
  */
 
 object Versions {
-    const val NAV_VERSION = "2.7.0"
+    const val NAV_VERSION = "2.5.3"
     const val ROOM_VERSION = "2.4.2"
 }
 
@@ -23,7 +23,7 @@ object AndroidX {
 
 object KTX {
     const val CORE = "androidx.core:core-ktx:1.9.0"
-    const val LIFE_CYCLE = "androidx.lifecycle:lifecycle-runtime-ktx:2.5.0-rc01"
+    const val LIFE_CYCLE = "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
 }
 
 object Google {
@@ -62,7 +62,7 @@ object Room {
 }
 
 object BottomBar{
-    const val EXPANDABLE_BOTTOM_BAR = "com.github.st235:expandablebottombar:1.4.0"
+    const val EXPANDABLE_BOTTOM_BAR = "com.github.st235:expandablebottombar:1.5.3"
 }
 
 object Glide{

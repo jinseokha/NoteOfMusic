@@ -8,18 +8,17 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.devseok.domain.model.album.Album
+import com.devseok.domain.utils.Result
 import com.devseok.presentation.R
 import com.devseok.presentation.base.BaseFragmentMain
 import com.devseok.presentation.databinding.FragmentAlbumListBinding
 import com.devseok.presentation.utils.LIST_TYPE
 import com.devseok.presentation.view.MainViewModel
 import com.devseok.presentation.view.album_list.AlbumViewModel
-import com.devseok.presentation.view.category.CategoryDialogListener
-import com.devseok.presentation.view.sort.SortListener
-import com.devseok.domain.utils.Result
-import com.devseok.presentation.view.MainFragmentDirections
 import com.devseok.presentation.view.category.CategoryDialog
+import com.devseok.presentation.view.category.CategoryDialogListener
 import com.devseok.presentation.view.sort.SortDialog
+import com.devseok.presentation.view.sort.SortListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
@@ -64,7 +63,7 @@ class AlbumListFragment : BaseFragmentMain<FragmentAlbumListBinding>(R.layout.fr
         searchView = search.actionView as SearchView
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
+            override fun onQueryTextSubmit(query: String): Boolean {
                 searchView.clearFocus()
                 return true
             }
@@ -81,7 +80,7 @@ class AlbumListFragment : BaseFragmentMain<FragmentAlbumListBinding>(R.layout.fr
         binding.apply {
             toolbar.setOnMenuItemClickListener {
                 if (it.itemId == R.id.menu_add) {
-                    findNavController().navigate(R.id.action_mainFragment_to_albumSearchFragment)
+                    findNavController().navigate(R.id.action_albumListFragment_to_albumSearchFragment)
                 }
                 false
             }
@@ -139,7 +138,7 @@ class AlbumListFragment : BaseFragmentMain<FragmentAlbumListBinding>(R.layout.fr
     }
 
     override fun onItemClicked(album: Album) {
-        findNavController().navigate(MainFragmentDirections.actionMainFragmentToAlbumDetailFragment(album))
+        findNavController().navigate(AlbumListFragmentDirections.actionAlbumListFragmentToAlbumDetailFragment(album))
     }
 
     override fun onOtherButtonClicked(album: Album) {

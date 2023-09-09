@@ -12,7 +12,7 @@ import org.simpleframework.xml.Root
 
 @Root(name = "rss", strict = false)
 data class MusicResponse(
-    @field:Element(name = "channle")
+    @field:Element(name = "channel")
     var channle: Channel? = null
 )
 

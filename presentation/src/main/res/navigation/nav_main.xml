@@ -2,28 +2,28 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_main"
-    app:startDestination="@id/musicListFragment"
+    app:startDestination="@id/albumListFragment"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <keep_state_fragment
+    <fragment
         android:id="@+id/musicListFragment"
         android:name="com.devseok.presentation.view.music_list.list.MusicListFragment"
         android:label="MusicListFragment"
         tools:layout="@layout/fragment_music_list"/>
 
-    <keep_state_fragment
+    <fragment
         android:id="@+id/albumListFragment"
         android:name="com.devseok.presentation.view.album_list.list.AlbumListFragment"
         android:label="albumListFragment"
         tools:layout="@layout/fragment_album_list"/>
 
-    <keep_state_fragment
+    <!--<fragment
         android:id="@+id/otherFragment"
         android:name="com.devseok.presentation.view.other.OtherFragment"
         android:label="SettingFragment"
-        tools:layout="@layout/fragment_other"/>
+        tools:layout="@layout/fragment_other"/>-->
 
-    <keep_state_fragment
+    <fragment
         android:id="@+id/settingFragment"
         android:name="com.devseok.presentation.view.setting.SettingFragment"
         android:label="SettingFragment"
