@@ -13,13 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/padding_default_10"
+        android:background="@color/black_2"
         tools:context=".view.music_list.insert.MusicInsertFragment">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@color/black_2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +64,8 @@
                 android:drawableStart="@drawable/left_image_disc"
                 android:drawablePadding="@dimen/padding_default_10"
                 android:inputType="text"
-                android:text="@={vm.title}" />
+                android:text="@={vm.title}"
+                style="@style/insert_body_text"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -83,7 +85,8 @@
                 android:drawableStart="@drawable/left_image_user"
                 android:drawablePadding="@dimen/padding_default_10"
                 android:inputType="text"
-                android:text="@={vm.artist}" />
+                android:text="@={vm.artist}"
+                style="@style/insert_body_text"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

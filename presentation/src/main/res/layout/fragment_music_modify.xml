@@ -12,6 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/black_2"
         android:padding="@dimen/padding_default_10"
         tools:context=".view.music_list.modify.MusicModifyFragment">
 
@@ -19,7 +20,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@color/black_2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/music_title"
-                android:drawableStart="@drawable/left_image_disc"
+                android:drawableStart="@drawable/music_image_disc"
                 android:drawablePadding="@dimen/padding_default_10"
                 android:inputType="text"
                 android:text="@={vm.title}" />
