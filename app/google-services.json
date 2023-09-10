@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1087669820211",
+    "project_id": "noteofmusic-ae24c",
+    "storage_bucket": "noteofmusic-ae24c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087669820211:android:3dcb7a779cdeac79233c46",
+        "android_client_info": {
+          "package_name": "com.devseok.noteofmusic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1087669820211-llfojlp7ddoamgrkcucmm63vuu13c97a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devseok.noteofmusic",
+            "certificate_hash": "a3afa977ce398b83baea2c62947a47adb568bb12"
+          }
+        },
+        {
+          "client_id": "1087669820211-vunbf7shljej06k2udm1nmq4odh2ifn1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCQjxQSASfgbz68GPRqQqSw8EzTZ2-SrY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1087669820211-vunbf7shljej06k2udm1nmq4odh2ifn1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
