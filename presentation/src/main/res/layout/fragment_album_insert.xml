@@ -13,6 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/black_2"
         android:padding="@dimen/padding_default_10">
 
         <com.google.android.material.appbar.MaterialToolbar
@@ -24,7 +25,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:navigationIcon="@drawable/ic_baseline_arrow_back_24">
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_white_24">
 
             <TextView
                 android:id="@+id/text"
@@ -39,6 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:fillViewport="true"
+            android:background="@color/black_2"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -71,15 +73,18 @@
 
                     <Spinner
                         android:id="@+id/spinner_genre"
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/custom_spinner"
                         android:entries="@array/genre"
-                        app:layout_constraintStart_toEndOf="@id/image_album"
-                        app:layout_constraintBottom_toBottomOf="@id/image_album"/>
+                        android:paddingLeft="5dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/image_album"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/image_album" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
+                <!--<com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/input_layout_title"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
@@ -95,9 +100,37 @@
                         android:inputType="text"
                         android:text="@={vm.title}" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>-->
 
-                <com.google.android.material.textfield.TextInputLayout
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_title"
+                    android:background="@drawable/edittext_state_background"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:drawableStart="@drawable/left_image_disc"
+                    android:drawablePadding="@dimen/padding_default_10"
+                    android:paddingLeft="@dimen/edittext_padding_10"
+                    android:inputType="text"
+                    android:text="@={vm.title}"
+                    android:hint="@string/music_title"
+                    style="@style/insert_body_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/image_music"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_artist"
+                    android:background="@drawable/edittext_state_background"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:drawableStart="@drawable/left_image_user"
+                    android:drawablePadding="@dimen/padding_default_10"
+                    android:paddingLeft="@dimen/edittext_padding_10"
+                    android:inputType="text"
+                    android:text="@={vm.artist}"
+                    android:hint="@string/music_artist"
+                    style="@style/insert_body_text"
+                    app:layout_constraintStart_toStartOf="@+id/edit_title"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_title"/>
+
+                <!--<com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/input_layout_artist"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
@@ -113,9 +146,24 @@
                         android:inputType="text"
                         android:text="@={vm.artist}" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>-->
 
-                <com.google.android.material.textfield.TextInputLayout
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_summary"
+                    android:background="@drawable/edittext_state_background"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:drawableStart="@drawable/left_image_pen"
+                    android:drawablePadding="@dimen/padding_default_10"
+                    android:paddingLeft="@dimen/edittext_padding_10"
+                    android:maxLength="16"
+                    android:hint="@string/music_summary"
+                    android:inputType="text"
+                    android:text="@={vm.summary}"
+                    style="@style/insert_body_text"
+                    app:layout_constraintStart_toStartOf="@+id/edit_artist"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_artist"/>
+
+                <!--<com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/input_layout_summary"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
@@ -134,9 +182,9 @@
                         android:maxLength="16"
                         android:text="@={vm.summary}" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>-->
 
-                <com.google.android.material.textfield.TextInputLayout
+                <!--<com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/input_layout_content"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
@@ -156,7 +204,23 @@
                         android:background="@null"
                         android:text="@={vm.content}"/>
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>-->
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:padding="@dimen/edittext_padding_10"
+                    android:background="@drawable/edittext_state_background"
+                    android:maxLength="16"
+                    android:gravity="top"
+                    android:hint="@string/music_content"
+                    android:text="@={vm.content}"
+                    style="@style/insert_body_text"
+                    app:layout_constraintStart_toStartOf="@+id/edit_summary"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_summary"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -176,6 +240,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margin_narrow_8"
                     android:text="@{vm.trackList}"
+                    android:textColor="@color/white"
                     android:visibility="@{vm.trackBoolean ? View.VISIBLE : View.GONE}"
                     tools:text="트랙리스트 입니다." />
 
@@ -191,7 +256,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent">
 
-            <androidx.appcompat.widget.AppCompatButton
+            <!--<androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_cancel"
                 style="@style/btn_text"
                 android:gravity="center"
@@ -205,23 +270,23 @@
                 app:layout_constraintEnd_toStartOf="@+id/btn_ok"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />-->
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_ok"
                 style="@style/btn_text"
-                android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_marginStart="@dimen/margin_10"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="@dimen/margin_10"
-                android:onClick="@{() -> vm.inputCheck()}"
                 android:background="@drawable/button_ok"
+                android:gravity="center"
+                android:onClick="@{() -> vm.inputCheck()}"
                 android:text="@string/save"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/btn_cancel"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -57,9 +57,9 @@ class AlbumModifyFragment : BaseFragment<FragmentAlbumModifyBinding>(R.layout.fr
             toolbar.setNavigationOnClickListener {
                 findNavController().popBackStack()
             }
-            btnCancel.setOnClickListener {
+            /*btnCancel.setOnClickListener {
                 findNavController().popBackStack()
-            }
+            }*/
         }
     }
 

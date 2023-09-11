@@ -79,6 +79,8 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/noto_sans_bold</item>
         <item name="android:includeFontPadding">false</item>
+        <item name="android:paddingTop">@dimen/padding_default_5</item>
+        <item name="android:paddingBottom">@dimen/padding_default_5</item>
     </style>
 
     <style name="btn_dialog_text">
@@ -118,12 +120,14 @@
     </style>
 
     <style name="insert_body_text">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/edittext_height</item>
         <item name="android:textSize">@dimen/detail_body</item>
         <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/light_gray_edit_hint</item>
         <item name="android:fontFamily">@font/noto_sans_regular</item>
         <item name="android:includeFontPadding">false</item>
+        <item name="android:gravity">center_vertical</item>
     </style>
 
     <style name="bottom_sheet_black_text">
@@ -166,7 +170,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/setting_header_size</item>
-        <item name="android:textColor">@color/gray</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/noto_sans_regular</item>
         <item name="android:includeFontPadding">false</item>
     </style>
@@ -233,5 +237,10 @@
     </style>
     <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@drawable/dialog_bottom_sheet</item>
+    </style>
+
+    <style name="SearchViewTheme" parent="Widget.AppCompat.SearchView">
+        <item name="android:editTextColor">@android:color/white</item>
+        <item name="android:textColorHint">@color/light_gray_hint</item>
     </style>
 </resources>

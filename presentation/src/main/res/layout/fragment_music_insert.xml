@@ -25,7 +25,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:navigationIcon="@drawable/ic_baseline_arrow_back_24">
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_white_24">
 
             <TextView
                 android:id="@+id/text"
@@ -48,11 +48,11 @@
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
             tools:srcCompat="@tools:sample/avatars" />
 
-        <com.google.android.material.textfield.TextInputLayout
+        <!--<com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_layout_title"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/image_music">
 
@@ -67,15 +67,43 @@
                 android:text="@={vm.title}"
                 style="@style/insert_body_text"/>
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>-->
 
-        <com.google.android.material.textfield.TextInputLayout
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_title"
+            android:background="@drawable/edittext_state_background"
+            android:layout_marginTop="@dimen/margin_10"
+            android:drawableStart="@drawable/left_image_disc"
+            android:drawablePadding="@dimen/padding_default_10"
+            android:paddingLeft="@dimen/edittext_padding_10"
+            android:inputType="text"
+            android:text="@={vm.title}"
+            android:hint="@string/music_title"
+            style="@style/insert_body_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_music"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_artist"
+            android:background="@drawable/edittext_state_background"
+            android:layout_marginTop="@dimen/margin_10"
+            android:drawableStart="@drawable/left_image_user"
+            android:drawablePadding="@dimen/padding_default_10"
+            android:paddingLeft="@dimen/edittext_padding_10"
+            android:inputType="text"
+            android:text="@={vm.artist}"
+            android:hint="@string/music_artist"
+            style="@style/insert_body_text"
+            app:layout_constraintStart_toStartOf="@+id/edit_title"
+            app:layout_constraintTop_toBottomOf="@+id/edit_title"/>
+
+        <!--<com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_layout_artist"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@+id/input_layout_title"
-            app:layout_constraintTop_toBottomOf="@+id/input_layout_title">
+            app:layout_constraintStart_toStartOf="@+id/edit_title"
+            app:layout_constraintTop_toBottomOf="@+id/edit_title">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_artist"
@@ -88,17 +116,32 @@
                 android:text="@={vm.artist}"
                 style="@style/insert_body_text"/>
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>-->
 
-        <com.google.android.material.textfield.TextInputLayout
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_summary"
+            android:background="@drawable/edittext_state_background"
+            android:layout_marginTop="@dimen/margin_10"
+            android:drawableStart="@drawable/left_image_pen"
+            android:drawablePadding="@dimen/padding_default_10"
+            android:paddingLeft="@dimen/edittext_padding_10"
+            android:maxLength="16"
+            android:hint="@string/music_summary"
+            android:inputType="text"
+            android:text="@={vm.summary}"
+            style="@style/insert_body_text"
+            app:layout_constraintStart_toStartOf="@+id/edit_artist"
+            app:layout_constraintTop_toBottomOf="@+id/edit_artist"/>
+
+        <!--<com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_layout_summary"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:counterEnabled="true"
             app:counterMaxLength="16"
-            app:layout_constraintStart_toStartOf="@+id/input_layout_artist"
-            app:layout_constraintTop_toBottomOf="@+id/input_layout_artist">
+            app:layout_constraintStart_toStartOf="@+id/edit_artist"
+            app:layout_constraintTop_toBottomOf="@+id/edit_artist">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_summary"
@@ -111,9 +154,25 @@
                 android:inputType="text"
                 android:text="@={vm.summary}"/>
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>-->
 
-        <com.google.android.material.textfield.TextInputLayout
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_content"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:padding="@dimen/edittext_padding_10"
+            android:background="@drawable/edittext_state_background"
+            android:maxLength="16"
+            android:gravity="top"
+            android:hint="@string/music_content"
+            android:text="@={vm.content}"
+            style="@style/insert_body_text"
+            app:layout_constraintStart_toStartOf="@+id/edit_summary"
+            app:layout_constraintTop_toBottomOf="@+id/edit_summary"/>
+
+        <!--<com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_layout_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -121,8 +180,8 @@
             android:layout_marginTop="@dimen/margin_10"
             android:layout_marginBottom="@dimen/margin_10"
             app:layout_constraintBottom_toTopOf="@+id/btn_cancel"
-            app:layout_constraintStart_toStartOf="@+id/input_layout_summary"
-            app:layout_constraintTop_toBottomOf="@+id/input_layout_summary">
+            app:layout_constraintStart_toStartOf="@+id/edit_summary"
+            app:layout_constraintTop_toBottomOf="@+id/edit_summary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_content"
@@ -133,9 +192,9 @@
                 android:background="@null"
                 android:text="@={vm.content}"/>
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>-->
 
-        <androidx.appcompat.widget.AppCompatButton
+        <!--<androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_cancel"
             android:text="@string/cancel"
             android:layout_width="0dp"
@@ -147,29 +206,32 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btn_ok"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />-->
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_ok"
             style="@style/btn_text"
-            android:gravity="center"
             android:layout_width="0dp"
-            android:text="@string/save"
             android:layout_marginStart="@dimen/margin_10"
             android:layout_marginBottom="@dimen/margin_10"
             android:background="@drawable/button_ok"
+            android:gravity="center"
             android:onClick="@{() -> vm.inputCheck()}"
+            android:text="@string/save"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btn_cancel" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Spinner
             android:id="@+id/spinner_genre"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/custom_spinner"
             android:entries="@array/genre"
+            android:paddingLeft="5dp"
             app:layout_constraintBottom_toBottomOf="@+id/image_music"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/image_music" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

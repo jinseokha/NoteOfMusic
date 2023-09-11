@@ -51,7 +51,7 @@
             app:layout_constraintTop_toBottomOf="@+id/text_title"
             tools:text="아티스트" />
 
-        <TextView
+        <!--<TextView
             android:id="@+id/text_summary"
             android:layout_width="0dp"
             style="@style/list_summary_text"
@@ -64,7 +64,7 @@
             app:layout_constraintStart_toStartOf="@+id/text_artist"
             app:layout_constraintTop_toBottomOf="@+id/text_artist"
             app:summary="@{album.summary}"
-            tools:text="간략한 설명입니다." />
+            tools:text="간략한 설명입니다." />-->
 
         <ImageView
             android:id="@+id/image_other"

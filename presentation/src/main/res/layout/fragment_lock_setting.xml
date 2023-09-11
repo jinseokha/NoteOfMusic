@@ -10,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/black_2"
         tools:context=".view.setting.lock.LockSettingFragment">
 
         <com.google.android.material.appbar.MaterialToolbar
@@ -17,12 +18,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_default_10"
-            android:background="@color/white"
+            android:background="@color/black_2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:navigationIcon="@drawable/ic_baseline_arrow_back_24">
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_white_24">
 
             <TextView
                 android:id="@+id/text"
@@ -35,6 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:fillViewport="true"
+            android:background="@color/black_2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -54,7 +56,7 @@
                     android:layout_marginTop="@dimen/margin_10"
                     android:thumb="@drawable/switch_thumb"
                     android:paddingStart="@dimen/padding_20"
-                    android:background="@color/real_light_gray"
+                    android:background="@color/black_2"
                     android:paddingTop="@dimen/padding_default_10"
                     android:paddingEnd="@dimen/padding_default_10"
                     android:paddingBottom="@dimen/padding_default_10"
@@ -68,7 +70,7 @@
                     android:layout_marginTop="@dimen/margin_1"
                     android:thumb="@drawable/switch_thumb"
                     android:paddingStart="@dimen/padding_20"
-                    android:background="@color/real_light_gray"
+                    android:background="@color/black_2"
                     android:paddingTop="@dimen/padding_default_10"
                     android:paddingEnd="@dimen/padding_default_10"
                     android:paddingBottom="@dimen/padding_default_10"

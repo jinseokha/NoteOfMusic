@@ -62,9 +62,9 @@ class MusicInsertFragment : BaseFragment<FragmentMusicInsertBinding>(R.layout.fr
             toolbar.setNavigationOnClickListener {
                 findNavController().popBackStack()
             }
-            btnCancel.setOnClickListener {
+           /* btnCancel.setOnClickListener {
                 findNavController().popBackStack()
-            }
+            }*/
         }
     }
 
