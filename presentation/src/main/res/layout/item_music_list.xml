@@ -34,7 +34,6 @@
             style="@style/list_title_text"
             android:ellipsize="end"
             android:maxLines="2"
-            app:layout_constraintEnd_toStartOf="@+id/image_rating"
             app:layout_constraintStart_toEndOf="@+id/image_music"
             app:layout_constraintTop_toTopOf="@+id/image_music"
             tools:text="타이틀" />
@@ -46,7 +45,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:text="@{music.artist}"
-            app:layout_constraintEnd_toEndOf="@+id/text_rating"
+            app:layout_constraintEnd_toStartOf="@+id/image_other"
             app:layout_constraintStart_toStartOf="@+id/text_title"
             app:layout_constraintTop_toBottomOf="@+id/text_title"
             tools:text="아티스트" />
@@ -75,7 +74,7 @@
             app:layout_constraintTop_toTopOf="@+id/image_music"
             app:srcCompat="@drawable/ic_baseline_more_vert_24" />
 
-        <TextView
+        <!--<TextView
             android:id="@+id/text_rating"
             android:layout_marginEnd="@dimen/margin_10"
             style="@style/list_rating_text"
@@ -94,13 +93,13 @@
             android:layout_marginEnd="@dimen/margin_4"
             app:layout_constraintEnd_toStartOf="@+id/text_rating"
             app:layout_constraintTop_toTopOf="@+id/image_music"
-            app:srcCompat="@drawable/star" />
+            app:srcCompat="@drawable/star" />-->
 
         <TextView
             android:id="@+id/text_time"
             style="@style/list_time_text"
             app:layout_constraintBottom_toBottomOf="@+id/image_music"
-            app:layout_constraintEnd_toEndOf="@+id/text_rating"
+            app:layout_constraintEnd_toStartOf="@+id/image_other"
             app:time="@{music.time}"
             tools:text="2020/01/01" />
 

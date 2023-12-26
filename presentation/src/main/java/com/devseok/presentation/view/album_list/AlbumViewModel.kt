@@ -121,7 +121,7 @@ class AlbumViewModel @Inject constructor(
         filterSort.value = type
     }
 
-    fun insertAlbum(rating: Float) {
+    fun insertAlbum() {
         viewModelScope.launch(Dispatchers.IO) {
             insertAlbumUseCase.execute(
                 Album(
@@ -130,7 +130,7 @@ class AlbumViewModel @Inject constructor(
                     artist = artist.value,
                     genre = genre.value,
                     trackList = trackList.value,
-                    rating = rating,
+                    rating = 3.5f,
                     summary = summary.value,
                     content = content.value
                 )
@@ -209,12 +209,6 @@ class AlbumViewModel @Inject constructor(
                 artist.value.isBlank() -> {
                     _inputErrorMsg.emit(R.string.error_artist)
                 }
-                summary.value.isBlank() ->{
-                    _inputErrorMsg.emit(R.string.error_summary)
-                }
-                content.value.isBlank() ->{
-                    _inputErrorMsg.emit(R.string.error_content)
-                }
                 genre.value == "장르" ->{
                     _inputErrorMsg.emit(R.string.error_genre)
                 }else -> {
@@ -224,10 +218,10 @@ class AlbumViewModel @Inject constructor(
         }
     }
 
-    fun updateAlbum(rating: Float) {
+    fun updateAlbum() {
         viewModelScope.launch(Dispatchers.IO) {
             updateAlbumUseCase.execute(id.value, title.value, artist.value, genre.value,
-                rating, summary.value, content.value)
+                3.5f, summary.value, content.value)
             _insertSuccessMsg.emit(R.string.update_success)
         }
     }

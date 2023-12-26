@@ -118,7 +118,7 @@ class MusicViewModel @Inject constructor(
         filterSort.value = type
     }
 
-    fun insertMusic(rating: Float) {
+    fun insertMusic() {
         viewModelScope.launch(Dispatchers.IO) {
             insertMusicUseCase.execute(
                 Music(
@@ -126,7 +126,7 @@ class MusicViewModel @Inject constructor(
                     title = title.value,
                     artist = artist.value,
                     genre = genre.value,
-                    rating = rating,
+                    rating = 3.5f,
                     summary = summary.value,
                     content = content.value
                 )
@@ -211,12 +211,6 @@ class MusicViewModel @Inject constructor(
                 }
                 artist.value.isBlank() -> {
                     _inputErrorMsg.emit(R.string.error_artist)
-                }
-                summary.value.isBlank() ->{
-                    _inputErrorMsg.emit(R.string.error_summary)
-                }
-                content.value.isBlank() ->{
-                    _inputErrorMsg.emit(R.string.error_content)
                 }
                 genre.value == "장르" ->{
                     _inputErrorMsg.emit(R.string.error_genre)

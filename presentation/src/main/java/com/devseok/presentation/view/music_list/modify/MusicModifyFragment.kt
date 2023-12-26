@@ -62,7 +62,8 @@ class MusicModifyFragment : BaseFragment<FragmentMusicModifyBinding>(R.layout.fr
 
         repeatOnStarted {
             musicViewModel.inputSuccessEvent.collectLatest {
-                RatingDialog(requireContext(), this@MusicModifyFragment).show()
+                musicViewModel.insertMusic()
+                //RatingDialog(requireContext(), this@MusicModifyFragment).show()
             }
         }
     }

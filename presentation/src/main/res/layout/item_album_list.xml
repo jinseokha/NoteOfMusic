@@ -81,6 +81,7 @@
             style="@style/list_rating_text"
             android:textColor="@color/album_color"
             android:text="@{String.valueOf(album.rating)}"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="@+id/image_rating"
             app:layout_constraintEnd_toStartOf="@+id/image_other"
             app:layout_constraintTop_toTopOf="@+id/image_rating"
@@ -92,6 +93,7 @@
             android:layout_height="@dimen/icon_small"
             android:layout_marginTop="@dimen/margin_2"
             android:layout_marginEnd="@dimen/margin_4"
+            android:visibility="invisible"
             app:layout_constraintEnd_toStartOf="@+id/text_rating"
             app:layout_constraintTop_toTopOf="@+id/image_album"
             app:srcCompat="@drawable/star" />

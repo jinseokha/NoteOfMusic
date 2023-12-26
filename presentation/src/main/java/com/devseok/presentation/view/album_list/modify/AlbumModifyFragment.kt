@@ -47,7 +47,8 @@ class AlbumModifyFragment : BaseFragment<FragmentAlbumModifyBinding>(R.layout.fr
 
         repeatOnStarted {
             albumViewModel.inputSuccessEvent.collectLatest {
-                RatingDialog(requireContext(), this@AlbumModifyFragment).show()
+                albumViewModel.updateAlbum()
+                //RatingDialog(requireContext(), this@AlbumModifyFragment).show()
             }
         }
     }
@@ -86,7 +87,7 @@ class AlbumModifyFragment : BaseFragment<FragmentAlbumModifyBinding>(R.layout.fr
     }
 
     override fun onOkClick(rating: Float) {
-        albumViewModel.updateAlbum(rating)
+        //albumViewModel.updateAlbum(rating)
     }
 
     override fun onResume() {

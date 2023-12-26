@@ -47,7 +47,8 @@ class AlbumInsertFragment : BaseFragment<FragmentAlbumInsertBinding>(R.layout.fr
 
         repeatOnStarted {
             albumViewModel.inputSuccessEvent.collectLatest {
-                RatingDialog(requireContext(), this@AlbumInsertFragment).show()
+                albumViewModel.insertAlbum()
+                //RatingDialog(requireContext(), this@AlbumInsertFragment).show()
             }
         }
     }
@@ -80,7 +81,7 @@ class AlbumInsertFragment : BaseFragment<FragmentAlbumInsertBinding>(R.layout.fr
     }
 
     override fun onOkClick(rating: Float) {
-        albumViewModel.insertAlbum(rating)
+        albumViewModel.insertAlbum()
     }
 
     override fun onResume() {

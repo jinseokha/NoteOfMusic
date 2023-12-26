@@ -52,7 +52,8 @@ class MusicInsertFragment : BaseFragment<FragmentMusicInsertBinding>(R.layout.fr
 
         repeatOnStarted {
             musicViewModel.inputSuccessEvent.collectLatest {
-                RatingDialog(requireContext(), this@MusicInsertFragment).show()
+                musicViewModel.insertMusic()
+                //RatingDialog(requireContext(), this@MusicInsertFragment).show()
             }
         }
     }
@@ -85,7 +86,7 @@ class MusicInsertFragment : BaseFragment<FragmentMusicInsertBinding>(R.layout.fr
     }
 
     override fun onOkClick(rating: Float) {
-        musicViewModel.insertMusic(rating)
+        //musicViewModel.insertMusic(rating)
     }
 
     override fun onResume() {
